@@ -10,6 +10,7 @@ type args struct {
 	url         string
 	connections *int
 	dir         *string
+	name        *string
 }
 
 func parse() *args {
@@ -20,6 +21,7 @@ func parse() *args {
 	var args args
 	args.connections = flag.Int("C", 16, "Concurrent connections.")
 	args.dir = flag.String("D", dir, "Store directory.")
+	args.name = flag.String("N", "", "File name.")
 	flag.Parse()
 	t := flag.Args()
 	if len(t) > 0 {
